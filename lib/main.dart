@@ -1,3 +1,4 @@
+import 'package:eye_care_center/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -99,6 +100,15 @@ class _HomePageState extends State<HomePage> {
         : '• Cosmetic & Eyelid Surgery Clinic';
 
     return Scaffold(
+      drawer: AppDrawer(
+        isArabic: isArabic,
+        onToggleLang: () => setState(() => isArabic = !isArabic),
+        phone: "+966500000000",
+        whatsapp: "966500000000", // wa.me requires country code without +
+        website: "https://your-site.com",
+        mapUrl: "https://maps.google.com/?q=Your+Clinic+Address",
+        email: "info@your-site.com",
+      ),
       backgroundColor: Colors.white,
       body: Center(
         child: Directionality(
