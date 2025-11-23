@@ -54,7 +54,7 @@ class AppDrawer extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(12),
                         child: Image.network(
-                          '/mnt/data/photo_2025-11-22_13-44-04.jpg',
+                          'assets/images/app_logo.jpg',
                           fit: BoxFit.cover,
                           errorBuilder: (_, __, ___) => const Icon(
                             Icons.visibility,

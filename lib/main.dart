@@ -28,7 +28,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isArabic = false;
+  bool isArabic = true;
 
   // Contact tools
   final String phone = "+966500000000";
@@ -100,11 +100,19 @@ class _HomePageState extends State<HomePage> {
         : '• Cosmetic & Eyelid Surgery Clinic';
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'EYE CARE CENTER',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        foregroundColor: Colors.blueAccent,
+      ),
       drawer: AppDrawer(
         isArabic: isArabic,
         onToggleLang: () => setState(() => isArabic = !isArabic),
         phone: "+966500000000",
-        whatsapp: "966500000000", // wa.me requires country code without +
+        whatsapp: "966500000000",
+        // wa.me requires country code without +
         website: "https://your-site.com",
         mapUrl: "https://maps.google.com/?q=Your+Clinic+Address",
         email: "info@your-site.com",
@@ -145,6 +153,7 @@ class _HomePageState extends State<HomePage> {
                 // Description box
                 containerBox(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         desc,
