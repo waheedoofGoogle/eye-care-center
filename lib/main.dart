@@ -12,7 +12,7 @@ class EyeCareCenterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: const Locale('en'),
+      locale: const Locale('ar'),
       supportedLocales: const [Locale('en'), Locale('ar')],
       home: const HomePage(),
     );
