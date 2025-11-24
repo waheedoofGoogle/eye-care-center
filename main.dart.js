@@ -35663,7 +35663,7 @@ h=e.rK(B.kL,e.ga7Z(),h)
 f=e.d?"\u0627\u0644\u0645\u0648\u0642\u0639 \u0639\u0644\u0649 \u0627\u0644\u062e\u0631\u064a\u0637\u0629":"Location"
 f=A.c([k,i,h,e.rK(B.kM,e.ga7W(),f)],g)
 h=A.agH(d,d,B.cN,d,d,d,d,d,d,d,d,d,B.A4,d,d,d,d,d,d,d)
-return new A.vz(new A.r4(a,B.EU,new A.KZ(d,d,1/0,56),d),A.Bc(A.acU(new A.Gc(A.QI(A.c([new A.oe(o,d,b.a.a,d,d),B.iO,n,B.vO,m,B.vP,l,B.iO,j,B.iN,new A.Hc(B.wn,15,15,f,d),B.vP,A.apT(!1,A.bF(e.d?"English":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629",B.Ld),d,d,d,d,d,d,new A.a79(e),d,h),B.iO],g),B.aH,B.i_),d),p),d,d),new A.AL(a4,new A.a7a(e),"+966500000000","966500000000","https://your-site.com","https://maps.google.com/?q=Your+Clinic+Address","info@your-site.com",d),B.i,d)},
+return new A.vz(new A.r4(a,B.EU,new A.KZ(d,d,1/0,56),d),A.Bc(A.acU(new A.Gc(A.QI(A.c([new A.oe(o,d,b.a.a,d,d),B.iO,n,B.vO,m,B.vP,l,B.iO,j,B.iN,new A.Hc(B.wn,15,15,f,d),B.vP,A.apT(!1,A.bF(e.d?"English":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629",B.Ld),d,d,d,d,d,d,new A.a79(e),d,h),B.iO],g),B.aH,B.i_),d),p),d,d),new A.AL(a4,new A.a7a(e),"+966500000000","966500000000","https://your-site.com","https://maps.app.goo.gl/7rhZCwyeD2Pnys9e7","info@your-site.com",d),B.i,d)},
 rK(a,b,c){var s=null
 return A.agG(A.ah1(a,B.i,s),A.bF(c,B.Kl),b,A.agH(s,s,B.cN,s,s,s,s,s,s,s,s,s,B.A2,s,s,s,s,s,s,s))}}
 A.a7a.prototype={
