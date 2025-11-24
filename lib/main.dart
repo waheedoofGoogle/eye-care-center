@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
         whatsapp: "966500000000",
         // wa.me requires country code without +
         website: "https://your-site.com",
-        mapUrl: "https://maps.google.com/?q=Your+Clinic+Address",
+        mapUrl: "https://maps.app.goo.gl/7rhZCwyeD2Pnys9e7",
         email: "info@your-site.com",
       ),
       backgroundColor: Colors.white,
