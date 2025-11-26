@@ -10,7 +10,9 @@ flutter clean
 flutter pub get
 flutter build web
 
-  <base href="/eye-care-center/">
+<base href="/eye-care-center/">
+
+
 
 git checkout gh-pages
 rm -rf *
