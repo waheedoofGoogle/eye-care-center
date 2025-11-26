@@ -6,7 +6,8 @@ git checkout main
 git add .
 git commit -m "Fix base href 2"
 git push
-
+flutter clean
+flutter pub get
 flutter build web
 
   <base href="/eye-care-center/">
