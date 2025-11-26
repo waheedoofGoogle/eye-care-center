@@ -1,0 +1,21 @@
+
+
+
+
+git checkout main
+git add .
+git commit -m "Fix base href 2"
+git push
+
+flutter build web
+
+  <base href="/eye-care-center/">
+
+git checkout gh-pages
+rm -rf *
+cp -r build/web/* .
+git add .
+git commit -m "Fix base href 2"
+git pull
+git push
+git checkout main
