@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
-    <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
-
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
-
-      For more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-      This is a placeholder for base href that will be replaced by the value of
-      the `--base-href` argument provided to `flutter build`.
-    -->
     <base href="/eye-care-center/">
 
     <meta charset="UTF-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="A new Flutter project.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <!-- iOS meta tags & icons -->
-    <meta name="mobile-web-app-capable" content="yes">
+    <!-- SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="مركز العناية بالعيون — تشخيص بصري متقدم، عمليات الليزك، عيادات الشبكية، الحول، عيون الأطفال، وتجميل الأجفان.">
+    <meta name="keywords"
+          content="عمليات ليزر, ليزك, عيون, مركز العناية بالعيون, شبكية, حول, تجميل الأجفان, فحص نظر, Eye Care Center">
+    <meta name="author" content="Eye Care Center">
+
+    <!-- PWA -->
+    <meta name="theme-color" content="#4B5DFF">
+
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="مركز العناية بالعيون">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="eye_care_center">
-    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- iOS Icon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
 
-    <title>eye_care_center</title>
+    <!-- PWA Icons -->
     <link rel="manifest" href="manifest.json">
+
+    <title>مركز العناية بالعيون</title>
+
     <style>
         body {
           margin: 0;
@@ -62,20 +64,24 @@
         }
     </style>
 </head>
-<body>
+
+<body dir="rtl">
+
 <!-- Loading Screen -->
 <div id="loading">
     <div class="loader"></div>
     <p style="margin-top: 15px; font-size: 18px; color: #4B5DFF;">
-        Loading...
+        جاري التحميل...
     </p>
 </div>
 
 <script>
     window.addEventListener('flutter-first-frame', function () {
       document.getElementById('loading').style.display = 'none';
-     });
+    });
 </script>
+
 <script src="flutter_bootstrap.js" async></script>
+
 </body>
 </html>
