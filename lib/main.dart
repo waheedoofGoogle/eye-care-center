@@ -11,7 +11,233 @@ class EyeCareCenterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const EyeCareLandingPage(),
+    );
+  }
+}
+
+// نسخة موقع حديث (Landing Page) مع قابلية العمل على Flutter Web
+class EyeCareLandingPage extends StatelessWidget {
+  const EyeCareLandingPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // ====== القسم الأول (الهيرو) ======
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 80),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xff1B4965), Color(0xff1E6091)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "EYE CARE CENTER",
+                    style: TextStyle(
+                      fontSize: 34,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "مركز العناية بالعيون والليزر بأعلى التقنيات الحديثة",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 22, color: Colors.white),
+                  ),
+                  const SizedBox(height: 30),
+
+                  ElevatedButton(
+                    onPressed: openWhatsapp,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.blue[900],
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 18,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    child: const Text(
+                      "احجز موعدك الآن",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // ====== خدمات المركز ======
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    "خدماتنا",
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 20),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: 30,
+                    runSpacing: 30,
+                    children: [
+                      _serviceCard(Icons.remove_red_eye, "فحص شامل للعين"),
+                      _serviceCard(
+                        Icons.local_laundry_service,
+                        "عمليات تصحيح البصر بالليزر",
+                      ),
+                      _serviceCard(
+                        Icons.visibility_outlined,
+                        "متابعة أمراض الشبكية",
+                      ),
+                      _serviceCard(
+                        Icons.medical_services,
+                        "فحوصات ما قبل العمليات",
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+            // ====== قسم لماذا نحن ======
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
+              color: const Color(0xffF7FBFF),
+              child: Column(
+                children: [
+                  const Text(
+                    "لماذا مركز EYE CARE؟",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 30),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: 40,
+                    runSpacing: 40,
+                    children: [
+                      _reasonItem("أحدث الأجهزة الطبية العالمية"),
+                      _reasonItem("خبرة طويلة في مجال الليزر"),
+                      _reasonItem("نتائج دقيقة ومضمونة"),
+                      _reasonItem("خدمة عملاء احترافية وسريعة"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+            // ====== قسم التواصل ======
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
+              child: Column(
+                children: [
+                  const Text(
+                    "اتصل بنا",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "نحن جاهزون للإجابة على استفساراتكم وحجز المواعيد",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    onPressed: openWhatsapp,
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 18,
+                      ),
+                      backgroundColor: Color(0xff1B4965),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    child: const Text(
+                      "تواصل معنا",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ====== بطاقة خدمة ======
+  Widget _serviceCard(IconData icon, String title) {
+    return Container(
+      width: 250,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 12,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 40, color: Colors.blue[800]),
+          const SizedBox(height: 15),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ====== عنصر "لماذا نحن" ======
+  Widget _reasonItem(String text) {
+    return Container(
+      width: 260,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 10,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+      ),
     );
   }
 }
@@ -25,30 +251,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isArabic = true;
-
-  // ====== CONSTANTS ======
-  final phone = "+963992369841";
-  final whatsapp = "+963992369841";
-  final website = "https://example.com";
-  final mapUrl = "https://www.google.com/maps?q=36.2209,37.1337";
-  final email = "waheed.hanblaas@gmail.com";
-
-  // ====== UTILS ======
-  Future<void> openUrl(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
-  }
-
-  // ====== SHORTCUTS ======
-  void callNumber() => openUrl("tel:$phone");
-
-  void openWhatsapp() => openUrl("https://wa.me/$whatsapp");
-
-  void openWebsite() => openUrl(website);
-
-  void openLocation() => openUrl(mapUrl);
 
   // ====== BUILD ======
   @override
@@ -196,9 +398,8 @@ class _HomePageState extends State<HomePage> {
               ),
               ArticleSection(isArabic: isArabic),
 
-
               // ===== CONTACT =====
-              contactSection(),
+              contactSection(isArabic),
 
               // ===== LANG TOGGLE =====
               const SizedBox(height: 20),
@@ -220,71 +421,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  // ===== REUSABLE WIDGETS =====
-
-  Widget contactSection() {
-    return Container(
-      color: Colors.grey.shade100,
-      padding: const EdgeInsets.symmetric(vertical: 40),
-      child: Column(
-        children: [
-          Text(
-            isArabic ? "طرق التواصل" : "Contact Us",
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF4B5DFF),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Wrap(
-            spacing: 15,
-            runSpacing: 15,
-            alignment: WrapAlignment.center,
-            children: [
-              contactButton(
-                text: isArabic ? "اتصال" : "Call",
-                icon: Icons.phone,
-                onTap: callNumber,
-              ),
-              contactButton(
-                text: isArabic ? "واتساب" : "WhatsApp",
-                icon: Icons.chat,
-                onTap: openWhatsapp,
-              ),
-              contactButton(
-                text: isArabic ? "الموقع الإلكتروني" : "Website",
-                icon: Icons.language,
-                onTap: openWebsite,
-              ),
-              contactButton(
-                text: isArabic ? "الموقع على الخريطة" : "Location",
-                icon: Icons.location_on,
-                onTap: openLocation,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget contactButton({
-    required String text,
-    required IconData icon,
-    required VoidCallback onTap,
-  }) {
-    return ElevatedButton.icon(
-      onPressed: onTap,
-      icon: Icon(icon, color: Colors.white),
-      label: Text(text, style: const TextStyle(color: Colors.white)),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF4B5DFF),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       ),
     );
   }
@@ -381,4 +517,92 @@ making it suitable for wider audiences.
       ],
     );
   }
+}
+
+// ====== CONSTANTS ======
+final phone = "+963992369841";
+final whatsapp = "+963992369841";
+final website = "https://example.com";
+final mapUrl = "https://www.google.com/maps?q=36.2209,37.1337";
+final email = "waheed.hanblaas@gmail.com";
+
+// ====== UTILS ======
+Future<void> openUrl(String url) async {
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+}
+
+// ====== SHORTCUTS ======
+void callNumber() => openUrl("tel:$phone");
+
+void openWhatsapp() => openUrl("https://wa.me/$whatsapp");
+
+void openWebsite() => openUrl(website);
+
+void openLocation() => openUrl(mapUrl);
+// ===== REUSABLE WIDGETS =====
+
+Widget contactSection(bool isArabic) {
+  return Container(
+    color: Colors.grey.shade100,
+    padding: const EdgeInsets.symmetric(vertical: 40),
+    child: Column(
+      children: [
+        Text(
+          isArabic ? "طرق التواصل" : "Contact Us",
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF4B5DFF),
+          ),
+        ),
+        const SizedBox(height: 20),
+        Wrap(
+          spacing: 15,
+          runSpacing: 15,
+          alignment: WrapAlignment.center,
+          children: [
+            contactButton(
+              text: isArabic ? "اتصال" : "Call",
+              icon: Icons.phone,
+              onTap: callNumber,
+            ),
+            contactButton(
+              text: isArabic ? "واتساب" : "WhatsApp",
+              icon: Icons.chat,
+              onTap: openWhatsapp,
+            ),
+            contactButton(
+              text: isArabic ? "الموقع الإلكتروني" : "Website",
+              icon: Icons.language,
+              onTap: openWebsite,
+            ),
+            contactButton(
+              text: isArabic ? "الموقع على الخريطة" : "Location",
+              icon: Icons.location_on,
+              onTap: openLocation,
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+Widget contactButton({
+  required String text,
+  required IconData icon,
+  required VoidCallback onTap,
+}) {
+  return ElevatedButton.icon(
+    onPressed: onTap,
+    icon: Icon(icon, color: Colors.white),
+    label: Text(text, style: const TextStyle(color: Colors.white)),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: const Color(0xFF4B5DFF),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+    ),
+  );
 }
